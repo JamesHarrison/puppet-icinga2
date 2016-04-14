@@ -22,17 +22,6 @@ class icinga2::config {
       ensure => directory,
   }
 
-  # TODO: temporary until we provide some default templates
-  file {
-    [
-      '/etc/icinga2/conf.d',
-    ]:
-      ensure  => directory,
-      purge   => $::icinga2::purge_confd,
-      recurse => $::icinga2::purge_confd,
-      force   => $::icinga2::purge_confd,
-  }
-
   file {
     [
       '/etc/icinga2/features-enabled',
