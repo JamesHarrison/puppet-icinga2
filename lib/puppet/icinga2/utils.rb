@@ -14,9 +14,9 @@ module Puppet
           value
         else
           if value.class == String
-            if value.match(/^\d+$/)
+            if value.match(/^[1-9][\d]*$/)
               return value.to_i
-            elsif value.match(/^\d+\.\d+$/)
+            elsif value.match(/^[1-9][\d]*\.[1-9][\d]*$/)
               return value.to_f
             else
               # remove quotes from oldstyle values "something"
